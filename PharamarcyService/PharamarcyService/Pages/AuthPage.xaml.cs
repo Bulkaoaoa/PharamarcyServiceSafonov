@@ -24,5 +24,10 @@ namespace PharamarcyService.Pages
         {
             InitializeComponent();
         }
+
+        private void as_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

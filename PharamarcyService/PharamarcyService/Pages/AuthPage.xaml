@@ -12,8 +12,11 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Style="{StaticResource TxtBlCommon}" VerticalAlignment="Center" Width="100" TextAlignment="Right" >Логин:</TextBlock>
-                <TextBox></TextBox>
+                <TextBox TextWrapping="Wrap" Width="100" Name="txtb"></TextBox>
+                <Button Width="50" Name="as" Click="as_Click"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>
 </Page>
+
+
