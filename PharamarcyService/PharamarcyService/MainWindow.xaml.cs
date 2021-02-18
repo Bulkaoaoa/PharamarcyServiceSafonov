@@ -23,6 +23,22 @@ namespace PharamarcyService
         public MainWindow()
         {
             InitializeComponent();
+            FrameMain.Navigate(new Pages.AuthPage());
+        }
+
+        private void FrameMain_ContentRendered(object sender, EventArgs e)
+        {
+            var currPage = FrameMain.Content as Page;
+            if (currPage.Title == "Авторизация")
+                BtnBack.Visibility = Visibility.Hidden;
+            else
+                BtnBack.Visibility = Visibility.Visible;
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (FrameMain.CanGoBack == true)
+                FrameMain.GoBack();
         }
     }
 }

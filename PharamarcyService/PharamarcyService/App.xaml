@@ -4,6 +4,73 @@
              xmlns:local="clr-namespace:PharamarcyService"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="MainLightBlue" Color="#5BBBC3"></SolidColorBrush>
+        <SolidColorBrush x:Key="MainLightBlueSecond" Color="#FFB1C9CB"></SolidColorBrush>
+        <SolidColorBrush x:Key="MainBlack" Color="#100E11"></SolidColorBrush>
+        <SolidColorBrush x:Key="MainDarkBlue" Color="#2C5C64"></SolidColorBrush>
+        <SolidColorBrush x:Key="MainDarkBlueSecond" Color="#3A7274"></SolidColorBrush>
+        <SolidColorBrush x:Key="MainDarkBlueThird" Color="#448C94"></SolidColorBrush>
+
+        <Style TargetType="{x:Type Button}" >
+            <Setter Property="Background" Value="#2C5C64" />
+            <Setter Property="Foreground" Value="White" />
+            <!--<Setter Property="BorderBrush" Value="#448C94" />-->
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="30" />
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="BtnStyleSecondary">
+            <Setter Property="Background" Value="#FFB1C9CB" />
+            <Setter Property="Foreground" Value="#2C5C64" />
+            <!--<Setter Property="BorderBrush" Value="#2C5C64" />-->
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Height" Value="30" />
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="BorderBrush" Value="#2C5C64" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="{x:Type RadioButton}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="BorderBrush" Value="#2C5C64" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}" x:Key="TxtBlCommon">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Foreground" Value="#2C5C64" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="#2C5C64" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="BorderBrush" Value="#2C5C64" />
+        </Style>
+        <Style TargetType="{x:Type PasswordBox}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="BorderBrush" Value="#2C5C64" />
+        </Style>
+
+        <Style TargetType="{x:Type DatePicker}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="BorderBrush" Value="#2C5C64" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="{x:Type Calendar}">
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="BorderBrush" Value="#2C5C64" />
+        </Style>
     </Application.Resources>
 </Application>
