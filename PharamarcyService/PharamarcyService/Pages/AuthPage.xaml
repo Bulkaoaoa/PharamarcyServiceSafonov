@@ -6,15 +6,19 @@
       xmlns:local="clr-namespace:PharamarcyService.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="1000"
-      Title="Авторизация">
+      Title="Авторизация" Style="{StaticResource MainPageStyle}">
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Style="{StaticResource TxtBlCommon}" VerticalAlignment="Center" Width="100" TextAlignment="Right" >Логин:</TextBlock>
-                <TextBox TextWrapping="Wrap" Width="100" Name="txtb"></TextBox>
-                <Button Width="50" Name="as" Click="as_Click"></Button>
+                <TextBlock Style="{StaticResource TxtBlCommon}" VerticalAlignment="Center" Width="50" TextAlignment="Right" >Логин:</TextBlock>
+                <TextBox  Width="200" Name="TxtBoxLogin"></TextBox>
             </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Style="{StaticResource TxtBlCommon}" VerticalAlignment="Center" Width="50" TextAlignment="Right" >Пароль:</TextBlock>
+                <PasswordBox Width="200" Name="PassBoxPassword"></PasswordBox>
+            </StackPanel>
+            <Button Width="200" Name="BtnLogin" HorizontalAlignment="Right" Click="BtnLogin_Click">Войти</Button>
         </StackPanel>
     </Grid>
 </Page>

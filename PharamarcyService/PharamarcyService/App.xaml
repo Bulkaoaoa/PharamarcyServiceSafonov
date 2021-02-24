@@ -11,9 +11,19 @@
         <SolidColorBrush x:Key="MainDarkBlueSecond" Color="#3A7274"></SolidColorBrush>
         <SolidColorBrush x:Key="MainDarkBlueThird" Color="#448C94"></SolidColorBrush>
 
+        <Style TargetType="{x:Type Window}" x:Key="MainWindowStyle">
+            <Setter Property="Foreground" Value="#2C5C64" />
+        </Style>
+
+        <Style TargetType="{x:Type Page}" x:Key="MainPageStyle">
+            <Setter Property="Foreground" Value="#2C5C64" />
+            <Setter Property="Height" Value="500" />
+            <Setter Property="Width" Value="1000" />
+        </Style>
+
         <Style TargetType="{x:Type Button}" >
             <Setter Property="Background" Value="#2C5C64" />
-            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Foreground" Value="#FFFFFF" />
             <!--<Setter Property="BorderBrush" Value="#448C94" />-->
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Margin" Value="5" />
@@ -47,9 +57,9 @@
             <Setter Property="Foreground" Value="#2C5C64" />
         </Style>
 
-        <Style TargetType="{x:Type TextBlock}">
+        <!--<Style TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="#2C5C64" />
-        </Style>
+        </Style>-->
 
         <Style TargetType="{x:Type TextBox}">
             <Setter Property="Margin" Value="5" />
