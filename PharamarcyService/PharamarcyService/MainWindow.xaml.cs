@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PharamarcyService.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,8 +29,8 @@ namespace PharamarcyService
 
         private void FrameMain_ContentRendered(object sender, EventArgs e)
         {
-            var currPage = FrameMain.Content as Page;
-            if (currPage.Title == "Авторизация")
+            //var currPage = FrameMain.Content as Page;
+            if ((FrameMain.Content as Page) is AuthPage)
                 BtnBack.Visibility = Visibility.Hidden;
             else
                 BtnBack.Visibility = Visibility.Visible;

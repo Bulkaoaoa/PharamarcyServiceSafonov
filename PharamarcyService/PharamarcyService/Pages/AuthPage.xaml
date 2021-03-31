@@ -11,14 +11,15 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Style="{StaticResource TxtBlCommon}" VerticalAlignment="Center" Width="50" TextAlignment="Right" >Логин:</TextBlock>
+                <TextBlock VerticalAlignment="Center" Width="50" TextAlignment="Right" >Логин:</TextBlock>
                 <TextBox  Width="200" Name="TxtBoxLogin"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock  Style="{StaticResource TxtBlCommon}" VerticalAlignment="Center" Width="50" TextAlignment="Right" >Пароль:</TextBlock>
+                <TextBlock   VerticalAlignment="Center" Width="50" TextAlignment="Right" >Пароль:</TextBlock>
                 <PasswordBox Width="200" Name="PassBoxPassword"></PasswordBox>
             </StackPanel>
             <Button Width="200" Name="BtnLogin" HorizontalAlignment="Right" Click="BtnLogin_Click">Войти</Button>
+            <Button Width="200" Name="BtnRegistration" HorizontalAlignment="Right" Click="BtnRegistration_Click" Style="{StaticResource BtnStyleSecondary}">Регистрация</Button>
         </StackPanel>
     </Grid>
 </Page>

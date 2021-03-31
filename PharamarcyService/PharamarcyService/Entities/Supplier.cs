@@ -19,7 +19,6 @@ namespace PharamarcyService.Entities
         public string INN { get; set; }
         public string ORGN { get; set; }
         public int CountryId { get; set; }
-        public int UserId { get; set; }
     
         public virtual Country Country { get; set; }
         public virtual User User { get; set; }

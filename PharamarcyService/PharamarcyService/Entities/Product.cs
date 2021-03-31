@@ -29,6 +29,8 @@ namespace PharamarcyService.Entities
         public string Description { get; set; }
         public string Indications { get; set; }
         public string ContrIndications { get; set; }
+        public byte[] Image { get; set; }
+        public bool IsArchived { get; set; }
     
         public virtual Manufacturer Manufacturer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -22,8 +22,8 @@
         </Style>
 
         <Style TargetType="{x:Type Button}" >
-            <Setter Property="Background" Value="#2C5C64" />
-            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="Background" Value="#FFB1C9CB" />
+            <Setter Property="Foreground" Value="#2C5C64" />
             <!--<Setter Property="BorderBrush" Value="#448C94" />-->
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Margin" Value="5" />
@@ -52,7 +52,7 @@
             <Setter Property="VerticalContentAlignment" Value="Center" />
         </Style>
 
-        <Style TargetType="{x:Type TextBlock}" x:Key="TxtBlCommon">
+        <Style TargetType="{x:Type TextBlock}">
             <Setter Property="Margin" Value="5" />
             <Setter Property="Foreground" Value="#2C5C64" />
         </Style>
@@ -62,6 +62,11 @@
         </Style>-->
 
         <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="BorderBrush" Value="#2C5C64" />
+        </Style>
+        <Style TargetType="{x:Type ComboBox}">
             <Setter Property="Margin" Value="5" />
             <Setter Property="BorderThickness" Value="2" />
             <Setter Property="BorderBrush" Value="#2C5C64" />

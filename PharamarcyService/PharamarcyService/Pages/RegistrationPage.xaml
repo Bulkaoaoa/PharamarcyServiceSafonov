@@ -1,0 +1,60 @@
+﻿<Page x:Class="PharamarcyService.Pages.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PharamarcyService.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="1000"
+      Title="Регистрация" Style="{StaticResource MainPageStyle}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="100" VerticalAlignment="Center" TextAlignment="Right" Text="Имя"></TextBlock>
+                <TextBox Width="200" VerticalAlignment="Center" Name="TxtBoxFirstName"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="100" VerticalAlignment="Center" TextAlignment="Right" Text="Фамилия"></TextBlock>
+                <TextBox Width="200" VerticalAlignment="Center" Name="TxtBoxLastName"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="100" VerticalAlignment="Center" TextAlignment="Right" Text="Отчество"></TextBlock>
+                <TextBox Width="200" VerticalAlignment="Center" Name="TxtBoxPatronymic"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="100" VerticalAlignment="Center" TextAlignment="Right" Text="Логин"></TextBlock>
+                <TextBox Width="200" VerticalAlignment="Center" Name="TxtBoxLogin"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="100" VerticalAlignment="Center" TextAlignment="Right" Text="Пароль"></TextBlock>
+                <PasswordBox Width="200" VerticalAlignment="Center" Name="PassBoxPass"></PasswordBox>
+            </StackPanel>
+            <CheckBox Click="ChkBoxSupplier_Click" Width="200" HorizontalAlignment="Right" Name="ChkBoxSupplier"  Content="Я поставщик"></CheckBox>
+            <Button Name="BtnRegisterClient" Content="Зарегистрироваться" Click="BtnRegisterClient_Click"></Button>
+        </StackPanel>
+
+        <StackPanel Name="StackPanelForSupplier" Visibility="Hidden" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="100" VerticalAlignment="Center" TextAlignment="Right" Text="Название"></TextBlock>
+                <TextBox Width="200" VerticalAlignment="Center" Name="TxtBoxSupplierName"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="100" VerticalAlignment="Center" TextAlignment="Right" Text="ИИН"></TextBlock>
+                <TextBox Width="200" VerticalAlignment="Center" Name="TxtBoxINN"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="100" VerticalAlignment="Center" TextAlignment="Right" Text="ОРГН"></TextBlock>
+                <TextBox Width="200" VerticalAlignment="Center" Name="TxtBoxORGN"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Width="100" VerticalAlignment="Center" TextAlignment="Right" Text="Название"></TextBlock>
+                <ComboBox SelectedIndex="0" Width="200" VerticalAlignment="Center"  Name="CmbBoxCountry" DisplayMemberPath="Name"></ComboBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
