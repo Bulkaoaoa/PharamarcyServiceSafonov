@@ -23,7 +23,7 @@ namespace PharamarcyService.Entities
         public int Id { get; set; }
         public int UserId { get; set; }
         public int StatusId { get; set; }
-        public bool IsForPharamacy { get; set; }
+        public bool IsForPharamarcy { get; set; }
     
         public virtual OrderStatus OrderStatus { get; set; }
         public virtual User User { get; set; }

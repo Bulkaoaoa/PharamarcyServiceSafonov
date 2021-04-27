@@ -25,13 +25,18 @@ namespace PharamarcyService.Pages.Administrator
         {
             InitializeComponent();
             UpdateDataGrd();
-            CmbBoxManufacturer.ItemsSource = AppData.Context.Manufacturer.ToList();
+            var currList = AppData.Context.Manufacturer.ToList();
+            currList.Insert(0,new Manufacturer()
+            {
+                Name = "Все",
+            });
+            CmbBoxManufacturer.ItemsSource = currList;
+
         }
 
         private void UpdateDataGrd()
         {
-            DataGrdProducts.ItemsSource = AppData.Context.Product.ToList().Where(p => p.IsArchived == false);
-
+            DataGrdProducts.ItemsSource = AppData.Context.Product.ToList().Where(p => p.IsArchived == false).ToList();
         }
 
         private void BtnSearch_Click(object sender, RoutedEventArgs e)

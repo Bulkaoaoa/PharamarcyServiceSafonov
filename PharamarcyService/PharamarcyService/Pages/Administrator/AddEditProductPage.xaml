@@ -24,8 +24,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Производитель" VerticalAlignment="Center" Width="100" TextAlignment="Right"></TextBlock>
-                <ComboBox Name="CmbBoxManufacturer" SelectedItem="{Binding Manufacturer}"  DisplayMemberPath="Name" VerticalAlignment="Center" Width="150"></ComboBox>
-                <Button Width="40" Content="+" VerticalAlignment="Center" Height="22" Name="BtnAddManufacturer" Click="BtnAddManufacturer_Click"></Button>
+                <ComboBox Name="CmbBoxManufacturer" SelectedItem="{Binding Manufacturer}"  DisplayMemberPath="Name" VerticalAlignment="Center" Width="200"></ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Состав"  VerticalAlignment="Top" Width="100" TextAlignment="Right"></TextBlock>

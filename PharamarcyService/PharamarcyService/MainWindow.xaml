@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PharamarcyService"
         mc:Ignorable="d"
-        Title="{Binding ElementName=FrameMain, Path=Content.Title}" Style="{StaticResource MainWindowStyle}" MinHeight="700" MinWidth="1000" Height="700" Width="1000">
+        Title="{Binding ElementName=FrameMain, Path=Content.Title}" Style="{StaticResource MainWindowStyle}" MinHeight="700" MinWidth="1100" Height="700" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>

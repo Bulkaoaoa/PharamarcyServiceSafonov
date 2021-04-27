@@ -27,7 +27,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="StatusId" Type="int" Nullable="false" />
-          <Property Name="IsForPharamacy" Type="bit" Nullable="false" />
+          <Property Name="IsForPharamarcy" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="OrderStatus">
           <Key>
@@ -41,7 +41,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="ManufacturerId" Type="int" Nullable="false" />
           <Property Name="Composition" Type="nvarchar(max)" Nullable="false" />
@@ -378,7 +378,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="StatusId" Type="Int32" Nullable="false" />
-          <Property Name="IsForPharamacy" Type="Boolean" Nullable="false" />
+          <Property Name="IsForPharamarcy" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="OrderStatus" Relationship="PharamarcyServiceDBModel.FK_Order_OrderStatus2" FromRole="Order" ToRole="OrderStatus" />
           <NavigationProperty Name="User" Relationship="PharamarcyServiceDBModel.FK_Order_User" FromRole="Order" ToRole="User" />
           <NavigationProperty Name="UserOrderProduct" Relationship="PharamarcyServiceDBModel.FK_UserOrderProduct_Order" FromRole="Order" ToRole="UserOrderProduct" />
@@ -396,7 +396,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="ManufacturerId" Type="Int32" Nullable="false" />
           <Property Name="Composition" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -604,7 +604,7 @@
           <EntitySetMapping Name="Order">
             <EntityTypeMapping TypeName="PharamarcyServiceDBModel.Order">
               <MappingFragment StoreEntitySet="Order">
-                <ScalarProperty Name="IsForPharamacy" ColumnName="IsForPharamacy" />
+                <ScalarProperty Name="IsForPharamarcy" ColumnName="IsForPharamarcy" />
                 <ScalarProperty Name="StatusId" ColumnName="StatusId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

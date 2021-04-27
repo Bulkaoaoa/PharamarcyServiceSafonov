@@ -29,18 +29,16 @@ namespace PharamarcyService.Pages.Administrator
         {
             InitializeComponent();
             CmbBoxManufacturer.ItemsSource = AppData.Context.Manufacturer.ToList();
+            
         }
         public AddEditProductPage(Product currProduct)
         {
             InitializeComponent();
+            CmbBoxManufacturer.ItemsSource = AppData.Context.Manufacturer.ToList();
             _currProduct = currProduct;
             this.DataContext = _currProduct;
             _selectedImg = currProduct.Image;
-        }
-
-        private void BtnAddManufacturer_Click(object sender, RoutedEventArgs e)
-        {
-
+            BtnAddEditProduct.Content = "Сохарнить";
         }
 
         private void BtnSelectImg_Click(object sender, RoutedEventArgs e)
@@ -97,6 +95,9 @@ namespace PharamarcyService.Pages.Administrator
                     _currProduct.Indications = TxtBoxIndications.Text.Trim() == "" ? null : TxtBoxIndications.Text;
                     _currProduct.ContrIndications = TxtBoxContrIndications.Text.Trim() == "" ? null : TxtBoxContrIndications.Text;
                     _currProduct.Image = _selectedImg;
+                    AppData.Context.SaveChanges();
+                    MessageBox.Show("Вы успешно изменили продукт", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                    NavigationService.GoBack();
                 }
             }
             else

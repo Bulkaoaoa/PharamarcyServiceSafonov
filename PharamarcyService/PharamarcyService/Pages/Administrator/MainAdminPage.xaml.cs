@@ -32,7 +32,7 @@ namespace PharamarcyService.Pages.Administrator
 
         private void BtnListOfSupplier_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Pages.Administrator.ListOfManufacturerPage());
         }
 
         private void BtnListOfOrders_Click(object sender, RoutedEventArgs e)

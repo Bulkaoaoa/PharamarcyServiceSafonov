@@ -122,7 +122,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Administrator\AddEditManufacturerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Administrator\AddEditProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\ListOfManufacturerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,8 +160,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\Administrator\AddEditManufacturerPage.xaml.cs">
+      <DependentUpon>AddEditManufacturerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Administrator\AddEditProductPage.xaml.cs">
       <DependentUpon>AddEditProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\ListOfManufacturerPage.xaml.cs">
+      <DependentUpon>ListOfManufacturerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Administrator\ListOfProductsPage.xaml.cs">
       <DependentUpon>ListOfProductsPage.xaml</DependentUpon>

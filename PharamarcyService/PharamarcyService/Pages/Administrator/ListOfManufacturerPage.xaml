@@ -1,12 +1,12 @@
-﻿<Page x:Class="PharamarcyService.Pages.Administrator.ListOfProductsPage"
+﻿<Page x:Class="PharamarcyService.Pages.Administrator.ListOfManufacturerPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PharamarcyService.Pages.Administrator"
       mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="1000"
-      Title="Список продуктов" Loaded="Page_Loaded" Style="{StaticResource MainPageStyle}">
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Список поставщиков" Style="{StaticResource MainPageStyle}" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,18 +14,17 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="70"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0" Orientation="Horizontal">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0">
             <TextBlock VerticalAlignment="Center" Text="Поиск"></TextBlock>
             <TextBox VerticalAlignment="Center" Width="200" Name="TxtBoxSearch"></TextBox>
             <TextBlock VerticalAlignment="Center" Text="Фильтрация" Margin="20 5 5 5"></TextBlock>
-            <ComboBox SelectedIndex="0" VerticalAlignment="Center" Width="200" Name="CmbBoxManufacturer" DisplayMemberPath="Name"></ComboBox>
+            <ComboBox SelectedIndex="0" VerticalAlignment="Center" Width="200" Name="CmBoxCountry" DisplayMemberPath="Name"></ComboBox>
             <Button VerticalAlignment="Center" Width="100" Content="Поиск" Name="BtnSearch" Click="BtnSearch_Click"></Button>
         </StackPanel>
-        <DataGrid Grid.Row="1" Margin="10" IsReadOnly="True" AutoGenerateColumns="False" Name="DataGrdProducts">
+        <DataGrid Grid.Row="1"  Margin="10" IsReadOnly="True" AutoGenerateColumns="False" Name="DataGrdManufacturer">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Header="Название" Binding="{Binding Name}"></DataGridTextColumn>
-                <DataGridTextColumn Width="*" Header="Цена" Binding="{Binding Price, StringFormat={}{0:N2}}"></DataGridTextColumn>
-                <DataGridTextColumn Width="*" Header="Производитель" Binding="{Binding Manufacturer.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Страна" Binding="{Binding Country.Name}"></DataGridTextColumn>
                 <DataGridTemplateColumn Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -42,6 +41,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" Content="Добавить" Name="BtnAddEditProduct" Click="BtnAddEditProduct_Click"></Button>
+        <Button Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" Content="Добавить" Name="BtnAddEditProduct" Click="BtnAddManufacturer_Click"></Button>
+
     </Grid>
 </Page>
