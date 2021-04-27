@@ -1,0 +1,44 @@
+﻿<Page x:Class="PharamarcyService.Pages.Administrator.ListOfClientOrders"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PharamarcyService.Pages.Administrator"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Список заказов клиентов" Style="{StaticResource MainPageStyle}" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0">
+            <TextBlock VerticalAlignment="Center" Text="Поиск"></TextBlock>
+            <TextBox VerticalAlignment="Center" Width="200" Name="TxtBoxSearch"></TextBox>
+            <TextBlock VerticalAlignment="Center" Text="Фильтрация" Margin="20 5 5 5"></TextBlock>
+            <ComboBox SelectedIndex="0" VerticalAlignment="Center" Width="200" Name="CmbBoxStatus" DisplayMemberPath="Name"></ComboBox>
+            <Button VerticalAlignment="Center" Width="100" Content="Поиск" Name="BtnSearch" Click="BtnSearch_Click"></Button>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Margin="10" IsReadOnly="True" AutoGenerateColumns="False" Name="DataGrdClientorders">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="ФИО клиента" Binding="{Binding User.FIO}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="Статус" Binding="{Binding Status.Name}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="BtnEdit" Click="BtnEdit_Click" Content="✏"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="BtnRemove" Click="BtnRemove_Click" Content="❌"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

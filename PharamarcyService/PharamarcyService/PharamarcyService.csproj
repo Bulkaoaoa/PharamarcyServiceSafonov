@@ -118,6 +118,7 @@
     <Compile Include="Entities\UserOrderProduct.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\UserPartial.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -127,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Administrator\AddEditProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\ListOfClientOrders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +170,9 @@
     </Compile>
     <Compile Include="Pages\Administrator\AddEditProductPage.xaml.cs">
       <DependentUpon>AddEditProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\ListOfClientOrders.xaml.cs">
+      <DependentUpon>ListOfClientOrders.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Administrator\ListOfManufacturerPage.xaml.cs">
       <DependentUpon>ListOfManufacturerPage.xaml</DependentUpon>
