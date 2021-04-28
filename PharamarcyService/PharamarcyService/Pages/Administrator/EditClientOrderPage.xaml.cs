@@ -24,6 +24,18 @@ namespace PharamarcyService.Pages.Administrator
         private Order _currOrder;
         private List<UserOrderProduct> _listOfProductOfOrder = new List<UserOrderProduct>();
         private List<Product> _listOfProducts = new List<Product>();
+        public EditClientOrderPage()
+        {
+            InitializeComponent();
+            var listOfManufacturers = AppData.Context.Manufacturer.ToList();
+            listOfManufacturers.Insert(0, new Manufacturer()
+            {
+                Name = "Все"
+            });
+            CmbBoxManufacturer.ItemsSource = listOfManufacturers;
+            _listOfProducts = AppData.Context.Product.ToList();
+
+        }
         public EditClientOrderPage(Order currOrder)
         {
             InitializeComponent();
