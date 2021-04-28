@@ -44,7 +44,7 @@ namespace PharamarcyService.Pages.Administrator
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Pages.Administrator.EditClientOrderPage((sender as Button).DataContext as Order));
         }
 
         private void BtnRemove_Click(object sender, RoutedEventArgs e)
@@ -61,6 +61,15 @@ namespace PharamarcyService.Pages.Administrator
             }
             else
                 MessageBox.Show("Вы не можете отменить этот заказ", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            var currList = AppData.Context.Order.ToList().Where(p => p.IsForPharamarcy == false && p.Id.ToString().Contains(TxtBoxSearch.Text.ToLower().Trim())).ToList();
+            if (CmbBoxStatus.SelectedIndex > 0)
+                currList = currList.Where(p => p.StatusId == (CmbBoxStatus.SelectedItem as OrderStatus).Id).ToList();
+            DataGrdClientorders.ItemsSource = currList;
+
         }
     }
 }

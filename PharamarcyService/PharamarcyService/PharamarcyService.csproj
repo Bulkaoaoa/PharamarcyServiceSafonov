@@ -97,12 +97,14 @@
     <Compile Include="Entities\Order.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\OrderPartial.cs" />
     <Compile Include="Entities\OrderStatus.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Product.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\ProductPartial.cs" />
     <Compile Include="Entities\Role.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -128,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Administrator\AddEditProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\EditClientOrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -170,6 +176,9 @@
     </Compile>
     <Compile Include="Pages\Administrator\AddEditProductPage.xaml.cs">
       <DependentUpon>AddEditProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\EditClientOrderPage.xaml.cs">
+      <DependentUpon>EditClientOrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Administrator\ListOfClientOrders.xaml.cs">
       <DependentUpon>ListOfClientOrders.xaml</DependentUpon>
