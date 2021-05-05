@@ -31,8 +31,10 @@ namespace PharamarcyService.Entities
         public string ContrIndications { get; set; }
         public byte[] Image { get; set; }
         public bool IsArchived { get; set; }
+        public int SupplierId { get; set; }
     
         public virtual Manufacturer Manufacturer { get; set; }
+        public virtual Supplier Supplier { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserOrderProduct> UserOrderProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

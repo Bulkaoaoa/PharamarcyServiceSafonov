@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:PharamarcyService.Pages.Administrator"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Редактирование заказа"  Style="{StaticResource MainPageStyle}">
+      Title="Редактирование заказа"  Style="{StaticResource MainPageStyle}" Unloaded="Page_Unloaded">
 
     <Grid>
         <Grid.RowDefinitions>

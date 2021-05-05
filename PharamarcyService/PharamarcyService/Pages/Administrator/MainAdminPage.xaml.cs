@@ -37,6 +37,11 @@ namespace PharamarcyService.Pages.Administrator
 
         private void BtnListOfOrders_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new Pages.Administrator.ListOfClientOrders());
+        }
+
+        private void BtnListOfSuppliersProduct_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }

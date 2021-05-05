@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="70"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0">
             <TextBlock VerticalAlignment="Center" Text="Поиск"></TextBlock>
@@ -41,5 +42,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" Content="Добавить" Name="BtnAddUserOrder" Click="BtnAddUserOrder_Click"></Button>
     </Grid>
 </Page>

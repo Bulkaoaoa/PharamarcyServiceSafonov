@@ -71,5 +71,10 @@ namespace PharamarcyService.Pages.Administrator
             DataGrdClientorders.ItemsSource = currList;
 
         }
+
+        private void BtnAddUserOrder_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.Administrator.EditClientOrderPage());
+        }
     }
 }

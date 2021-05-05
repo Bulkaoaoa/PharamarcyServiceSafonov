@@ -29,12 +29,14 @@ namespace PharamarcyService.Pages.Administrator
         {
             InitializeComponent();
             CmbBoxManufacturer.ItemsSource = AppData.Context.Manufacturer.ToList();
+            CmbBoxSupplier.ItemsSource = AppData.Context.Supplier.ToList();
             
         }
         public AddEditProductPage(Product currProduct)
         {
             InitializeComponent();
             CmbBoxManufacturer.ItemsSource = AppData.Context.Manufacturer.ToList();
+            CmbBoxSupplier.ItemsSource = AppData.Context.Supplier.ToList();
             _currProduct = currProduct;
             this.DataContext = _currProduct;
             _selectedImg = currProduct.Image;
@@ -79,6 +81,7 @@ namespace PharamarcyService.Pages.Administrator
                         ContrIndications = TxtBoxContrIndications.Text.Trim() == "" ? null : TxtBoxContrIndications.Text,
                         Image = _selectedImg,
                         IsArchived = false,
+                        SupplierId = (CmbBoxSupplier.SelectedItem as Entities.Supplier).Id,                        
                     };
                     AppData.Context.Product.Add(newProduct);
                     AppData.Context.SaveChanges();
@@ -95,6 +98,7 @@ namespace PharamarcyService.Pages.Administrator
                     _currProduct.Indications = TxtBoxIndications.Text.Trim() == "" ? null : TxtBoxIndications.Text;
                     _currProduct.ContrIndications = TxtBoxContrIndications.Text.Trim() == "" ? null : TxtBoxContrIndications.Text;
                     _currProduct.Image = _selectedImg;
+                    _currProduct.SupplierId = (CmbBoxSupplier.SelectedItem as Entities.Supplier).Id;
                     AppData.Context.SaveChanges();
                     MessageBox.Show("Вы успешно изменили продукт", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                     NavigationService.GoBack();

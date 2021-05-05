@@ -13,6 +13,7 @@
             <Button Width="200" Content="Список препаратов" Name="BtnListOfProducts" Click="BtnListOfProducts_Click"></Button>
             <Button Width="200" Content="Список поставщиков" Name="BtnListOfSupplier" Click="BtnListOfSupplier_Click"></Button>
             <Button Width="200" Content="Список заказов" Name="BtnListOfOrders" Click="BtnListOfOrders_Click"></Button>
+            <Button Width="200" Content="Оформить заказ для поставщиков" Name="BtnListOfSuppliersProduct" Click="BtnListOfSuppliersProduct_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>

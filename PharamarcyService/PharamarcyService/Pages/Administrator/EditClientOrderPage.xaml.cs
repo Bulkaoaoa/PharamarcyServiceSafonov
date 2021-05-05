@@ -27,6 +27,9 @@ namespace PharamarcyService.Pages.Administrator
         public EditClientOrderPage()
         {
             InitializeComponent();
+            //Проверить на всякий может будет ломать все
+            _listOfProducts = AppData.Context.Product.ToList();
+            _listOfProducts.ForEach(p => p.CountInProgram = 0);
             var listOfManufacturers = AppData.Context.Manufacturer.ToList();
             listOfManufacturers.Insert(0, new Manufacturer()
             {
@@ -64,23 +67,38 @@ namespace PharamarcyService.Pages.Administrator
 
         private void BtnSaveOrder_Click(object sender, RoutedEventArgs e)
         {
+
+
             if (_listOfProductOfOrder.Count != 0)
             {
-                var listToRemove = AppData.Context.UserOrderProduct.ToList().Where(p => p.OrderId == _currOrder.Id).ToList();
-                foreach (var item in listToRemove.ToList())
+                if (_currOrder == null)
                 {
-                    AppData.Context.UserOrderProduct.Remove(item);
+                    foreach (var item in _listOfProductOfOrder.ToList())
+                    {
+                        AppData.Context.UserOrderProduct.Add(item);
+                    }
+                    AppData.Context.SaveChanges();
+                    MessageBox.Show("Вы успешно добавили заказ!", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                AppData.Context.SaveChanges();
-                foreach (var item in _listOfProductOfOrder.ToList())
+                else
                 {
-                    AppData.Context.UserOrderProduct.Add(item);
+                    var listToRemove = AppData.Context.UserOrderProduct.ToList().Where(p => p.OrderId == _currOrder.Id).ToList();
+                    foreach (var item in listToRemove.ToList())
+                    {
+                        AppData.Context.UserOrderProduct.Remove(item);
+                    }
+                    AppData.Context.SaveChanges();
+                    foreach (var item in _listOfProductOfOrder.ToList())
+                    {
+                        AppData.Context.UserOrderProduct.Add(item);
+                    }
+                    AppData.Context.SaveChanges();
+                    MessageBox.Show("Вы успешно обновили заказ!", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                AppData.Context.SaveChanges();
-                MessageBox.Show("Вы успешно обновили заказ!", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
                 MessageBox.Show("Вы не выбрали ни одного товара!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+
         }
 
         private void TxtBoxCount_TextChanged(object sender, TextChangedEventArgs e)
@@ -140,6 +158,12 @@ namespace PharamarcyService.Pages.Administrator
             if (CmbBoxManufacturer.SelectedIndex > 0)
                 buffList = buffList.Where(p => p.ManufacturerId == (CmbBoxManufacturer.SelectedItem as Manufacturer).Id).ToList();
             DataGrdProduct.ItemsSource = buffList;
+        }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            _listOfProducts = AppData.Context.Product.ToList();
+            _listOfProducts.ForEach(p => p.CountInProgram = 0);
         }
     }
 }
