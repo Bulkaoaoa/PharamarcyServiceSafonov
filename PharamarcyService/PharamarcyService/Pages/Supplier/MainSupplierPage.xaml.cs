@@ -24,5 +24,10 @@ namespace PharamarcyService.Pages.Supplier
         {
             InitializeComponent();
         }
+
+        private void BtnAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.Supplier.AddProductPage());
+        }
     }
 }

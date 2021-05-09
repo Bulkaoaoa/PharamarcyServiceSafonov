@@ -21,5 +21,33 @@ namespace PharamarcyService.Entities
                 return listOfProducts;
             }
         }
+
+        public string TotalProducts
+        {
+            get
+            {
+                return $"Корзина ({TotalCount})";
+            }
+        }
+
+        public int TotalCount
+        {
+            get
+            {
+                return UserOrderProduct.ToList().Sum(i => i.Count);
+            }
+        }
+
+        public decimal TotalPrice
+        {
+            get
+            {
+                decimal price = 0;
+                foreach (var item in UserOrderProduct)
+                    price += item.Count * item.Product.Price;
+
+                return price;
+            }
+        }
     }
 }

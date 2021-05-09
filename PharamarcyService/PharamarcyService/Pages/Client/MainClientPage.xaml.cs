@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PharamarcyService.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,16 @@ namespace PharamarcyService.Pages.Client
         public MainClientPage()
         {
             InitializeComponent();
+        }
+
+        private void BtnProfile_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.Client.ProfilePage(AppData.CurrUser));
+        }
+
+        private void BtnProducts_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.Client.ListOfProductsPage());
         }
     }
 }
