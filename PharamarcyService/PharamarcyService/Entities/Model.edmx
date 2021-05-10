@@ -91,14 +91,6 @@
           <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="UserCart">
-          <Key>
-            <PropertyRef Name="Product_Id" />
-            <PropertyRef Name="User_Id" />
-          </Key>
-          <Property Name="Product_Id" Type="int" Nullable="false" />
-          <Property Name="User_Id" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="UserOrderProduct">
           <Key>
             <PropertyRef Name="Id" />
@@ -204,30 +196,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserCart_Product">
-          <End Role="Product" Type="Self.Product" Multiplicity="1" />
-          <End Role="UserCart" Type="Self.UserCart" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="UserCart">
-              <PropertyRef Name="Product_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserCart_User">
-          <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="UserCart" Type="Self.UserCart" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="UserCart">
-              <PropertyRef Name="User_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_UserOrderProduct_Order">
           <End Role="Order" Type="Self.Order" Multiplicity="1" />
           <End Role="UserOrderProduct" Type="Self.UserOrderProduct" Multiplicity="*" />
@@ -262,7 +230,6 @@
           <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UserCart" EntityType="Self.UserCart" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserOrderProduct" EntityType="Self.UserOrderProduct" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Manufacturer_Country" Association="Self.FK_Manufacturer_Country">
             <End Role="Country" EntitySet="Country" />
@@ -295,14 +262,6 @@
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserCart_Product" Association="Self.FK_UserCart_Product">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="UserCart" EntitySet="UserCart" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserCart_User" Association="Self.FK_UserCart_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="UserCart" EntitySet="UserCart" />
           </AssociationSet>
           <AssociationSet Name="FK_UserOrderProduct_Order" Association="Self.FK_UserOrderProduct_Order">
             <End Role="Order" EntitySet="Order" />
@@ -368,10 +327,6 @@
             <End Role="User" EntitySet="User" />
             <End Role="Supplier" EntitySet="Supplier" />
           </AssociationSet>
-          <AssociationSet Name="UserCart" Association="PharamarcyServiceDBModel.UserCart">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Country">
           <Key>
@@ -430,7 +385,6 @@
           <NavigationProperty Name="Manufacturer" Relationship="PharamarcyServiceDBModel.FK_Product_Manufacturer" FromRole="Product" ToRole="Manufacturer" />
           <NavigationProperty Name="Supplier" Relationship="PharamarcyServiceDBModel.FK_Product_Supplier" FromRole="Product" ToRole="Supplier" />
           <NavigationProperty Name="UserOrderProduct" Relationship="PharamarcyServiceDBModel.FK_UserOrderProduct_Product" FromRole="Product" ToRole="UserOrderProduct" />
-          <NavigationProperty Name="User" Relationship="PharamarcyServiceDBModel.UserCart" FromRole="Product" ToRole="User" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -477,7 +431,6 @@
           <NavigationProperty Name="Order" Relationship="PharamarcyServiceDBModel.FK_Order_User" FromRole="User" ToRole="Order" />
           <NavigationProperty Name="Role" Relationship="PharamarcyServiceDBModel.FK_User_Role" FromRole="User" ToRole="Role" />
           <NavigationProperty Name="Supplier" Relationship="PharamarcyServiceDBModel.FK_Supplier_User" FromRole="User" ToRole="Supplier" />
-          <NavigationProperty Name="Product" Relationship="PharamarcyServiceDBModel.UserCart" FromRole="User" ToRole="Product" />
         </EntityType>
         <EntityType Name="UserOrderProduct">
           <Key>
@@ -610,10 +563,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="UserCart">
-          <End Type="PharamarcyServiceDBModel.Product" Role="Product" Multiplicity="*" />
-          <End Type="PharamarcyServiceDBModel.User" Role="User" Multiplicity="*" />
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -725,14 +674,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="UserCart" TypeName="PharamarcyServiceDBModel.UserCart" StoreEntitySet="UserCart">
-            <EndProperty Name="User">
-              <ScalarProperty Name="Id" ColumnName="User_Id" />
-            </EndProperty>
-            <EndProperty Name="Product">
-              <ScalarProperty Name="Id" ColumnName="Product_Id" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -18,7 +18,6 @@ namespace PharamarcyService.Entities
         public User()
         {
             this.Order = new HashSet<Order>();
-            this.Product = new HashSet<Product>();
         }
     
         public int Id { get; set; }
@@ -33,7 +32,5 @@ namespace PharamarcyService.Entities
         public virtual ICollection<Order> Order { get; set; }
         public virtual Role Role { get; set; }
         public virtual Supplier Supplier { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Product { get; set; }
     }
 }
